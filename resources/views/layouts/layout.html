@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="main.css">
+            <link rel="shortcut icon" href="favicon.ico">
+            <title>{% block title %}{% endblock %}</title>
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        {% block footer %}
+            <footer>
+                <p>©{{ year }} Acme Inc. All rights reserved.</p>
+            </footer>
+        {% endblock %}
+    </body>
+</html>

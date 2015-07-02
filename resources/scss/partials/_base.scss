@@ -1,0 +1,19 @@
+@import "compass";
+
+// Colors
+$black: #111;
+$gray: #AAA;
+
+// Fonts
+$headFont: 'Source Sans Pro', sans-serif;
+$bodyFont: 'Source Serif Pro', serif;
+
+@mixin head-font($weight) {
+    font-family: $headFont;
+    font-weight: $weight;
+}
+
+@mixin body-font($weight) {
+    font-family: $bodyFont;
+    font-weight: $weight;
+}

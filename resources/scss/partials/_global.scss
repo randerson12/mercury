@@ -1,0 +1,47 @@
+html, body {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+body {
+    @include body-font(400);
+    color: $black;
+    font-size: 1.125em;
+    margin: 0 auto;
+    padding: 0;
+    vertical-align: top;
+}
+
+header {
+    @include head-font(300);
+    text-align: center;
+}
+
+section {
+    margin: 1em auto 2em auto;
+    width: 60%;
+
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+
+    @media (max-width: 480px) {
+        width: 90%;
+    }
+}
+
+footer p {
+    @include head-font(300);
+    font-size: 0.625em;
+    margin: 1em auto 0 auto;
+    text-align: center;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
