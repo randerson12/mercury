@@ -8,7 +8,7 @@ $container->register(new \Slim\Views\Twig('../resources/views', []));
 $app->get('/', function ($request, $response, $args) {
     return $this->view->render(
         $response,
-        'index.html',
+        'index.html.twig',
         ['year' => date('Y')]
     );
 })->setName('index');
