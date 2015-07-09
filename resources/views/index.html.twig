@@ -1,6 +1,9 @@
-{% extends 'layouts/layout.html.twig' %}
+{% extends 'layouts/main.html.twig' %}
 
-{% block title %}Project Mercury{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <script src="../resources/js/index.js"></script>
+{% endblock %}
 {% block content %}
     <header>
         <h1 class="center"><strong><a href="#">Project Mercury</a></strong></h1>

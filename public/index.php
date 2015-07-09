@@ -1,15 +1,23 @@
 <?php
+
+use Slim\App;
+use Slim\Views\Twig;
+
 require '../vendor/autoload.php';
 
-$app = new \Slim\App();
+$app = new App;
+$view = new Twig('../resources/views');
+$env = $view->getEnvironment();
+$env->addGlobal('year', date('Y'));
+
 $container = $app->getContainer();
-$container->register(new \Slim\Views\Twig('../resources/views', []));
+$container->register($view);
 
 $app->get('/', function ($request, $response, $args) {
     return $this->view->render(
         $response,
         'index.html.twig',
-        ['year' => date('Y')]
+        ['page_title' => 'Project Mercury']
     );
 })->setName('index');
 
