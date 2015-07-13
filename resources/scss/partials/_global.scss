@@ -38,11 +38,28 @@ section {
     }
 }
 
-footer p {
+footer {
     @include head-font(300);
     font-size: 0.625em;
     margin: 1em auto 2em auto;
     text-align: center;
+
+    p {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+
+        li {
+            display: inline;
+
+            a {
+                display: inline-block;
+                width: 5%;
+            }
+        }
+    }
 }
 
 a {

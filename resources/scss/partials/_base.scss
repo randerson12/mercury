@@ -1,12 +1,25 @@
+// Base - imports for all mixins & global project variables
 @import "compass";
 
 // Colors
 $black: #111;
 $gray: #AAA;
+$silver: #DDD;
+$white: #FFF;
+
+$transparent-white: rgba(255,255,255,0.9);
 
 // Fonts
 $headFont: 'Source Sans Pro', sans-serif;
 $bodyFont: 'Source Serif Pro', serif;
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+// Media Queries
+$max-mobile: 480px;
+$max-tablet: 768px;
+$min-desktop: 930px;
 
 @mixin head-font($weight) {
     font-family: $headFont;

@@ -1,17 +1,30 @@
-nav {
-    position: sticky;
+nav.fixed-nav {
+    background: $transparent-white;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    ul {
+        margin: 1em 0;
+    }
 }
 
-nav ul {
-    margin: 0.25em 0 2em 0;
+nav {
+    margin: .25em 0 1.75em 0;
     padding: 0;
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
 
     li {
         border-bottom: 1px solid $gray;
         display: inline;
         margin: 0 1em;
 
-        @media (max-width: 768px) {
+        @media (max-width: $max-tablet) {
             margin: 0 0.5em;
         }
     }
@@ -20,12 +33,24 @@ nav ul {
         display: inline-block;
         width: 10%;
 
-        @media (max-width: 768px) {
+        &.nav-small {
+            width: 2.5%;
+
+            @media (max-width: $max-mobile) {
+                width: 5%;
+            }
+        }
+
+        @media (max-width: $min-desktop) {
+            width: 12%;
+        }
+
+        @media (max-width: $max-tablet) {
             width: 20%;
         }
 
-        @media (max-width: 480px) {
-            width: 25%;
+        @media (max-width: $max-mobile) {
+            width: 24%;
         }
     }
 }

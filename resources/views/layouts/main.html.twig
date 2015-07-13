@@ -6,11 +6,27 @@
             <link rel="shortcut icon" href="favicon.ico">
             <link rel="stylesheet" href="main.css">
             <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+            <script src="../resources/js/main.js"></script>
             <title>{{ page_title }}</title>
         {% endblock %}
     </head>
     <body>
+        {% block header %}
+            <header>
+                <h1 class="center"><strong><a href="#">Project Mercury</a></strong></h1>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-small entypo-home"></a></li>
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#creation">Creation</a></li>
+                        <li><a href="#legacy">Legacy</a></li>
+                    </ul>
+                </nav>
+            </header>
+        {% endblock %}
+
         {% block content %}{% endblock %}
+
         {% block footer %}
             <footer>
                 <p>©{{ year }} Acme Inc. All rights reserved.</p>
