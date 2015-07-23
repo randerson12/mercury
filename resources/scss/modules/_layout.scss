@@ -4,7 +4,7 @@ h1 {
 
 section p {
     @include body-font(400);
-    hyphens: auto;
+    hyphens: manual;
     margin: 0.5em 0 1em 0;
     text-align: justify;
 }

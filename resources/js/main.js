@@ -1,6 +1,7 @@
 $(document).ready(function () {
   // Smooth Scrolling
-  $('a[href=#]').click(function() {
+  $('a[href=#]').click(function(e) {
+    e.preventDefault();
     $('html,body').animate({scrollTop: 0}, 500);
   });
   $('a[href*=#]:not([href=#])').click(function() {
@@ -8,8 +9,12 @@ $(document).ready(function () {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
+        var offset = ($('nav').outerHeight());
+        if ($('nav').hasClass('fixed-nav') === false) {
+            offset = offset + 64;
+        }
         $('html,body').animate({
-          scrollTop: target.offset().top - $('nav').outerHeight()
+            scrollTop: (target.offset().top - offset)
         }, 500);
         return false;
       }

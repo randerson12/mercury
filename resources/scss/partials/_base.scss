@@ -20,6 +20,7 @@ $bodyFont: 'Source Serif Pro', serif;
 $max-mobile: 480px;
 $max-tablet: 768px;
 $min-desktop: 930px;
+$med-desktop: 1230px;
 
 @mixin head-font($weight) {
     font-family: $headFont;
@@ -29,4 +30,16 @@ $min-desktop: 930px;
 @mixin body-font($weight) {
     font-family: $bodyFont;
     font-weight: $weight;
+}
+
+@mixin transition($prop: all, $dur: 0.5s, $ease: ease) {
+    -moz-transition: $prop $dur $ease;
+    -webkit-transition: $prop $dur $ease;
+    transition: $prop $dur $ease;
+}
+
+@mixin transY($yValue) {
+    -moz-transform: translateY($yValue);
+    -webkit-transform: translateY($yValue);
+    transform: translateY($yValue);
 }

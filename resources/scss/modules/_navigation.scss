@@ -1,24 +1,4 @@
-nav.fixed-nav {
-    background: $transparent-white;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-    ul {
-        margin: 1em 0;
-    }
-}
-
 nav {
-    margin: .25em 0 1.75em 0;
-    padding: 0;
-
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
     li {
         border-bottom: 1px solid $gray;
         display: inline;
@@ -27,6 +7,24 @@ nav {
         @media (max-width: $max-tablet) {
             margin: 0 0.5em;
         }
+    }
+
+    .logo {
+        opacity: 0;
+        position: relative;
+        width: 0;
+        @include transition(all 0 ease);
+
+        a {
+            white-space: nowrap;
+            width: 0;
+            @include transition;
+            @include transY(-50px);
+        }
+    }
+
+    .mobile-home {
+        display: none;
     }
 
     a {
@@ -51,6 +49,51 @@ nav {
 
         @media (max-width: $max-mobile) {
             width: 24%;
+        }
+    }
+}
+
+nav.fixed-nav {
+    background: $white;
+    box-shadow: 0 0 4px 0 rgba($black, .25);
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    ul {
+        margin: 1em 0;
+        overflow: hidden;
+    }
+
+    .logo {
+        border: 0;
+        display: inline;
+        width: 144px;
+        opacity: 1;
+
+        a {
+            display: inline-block;
+            width: 10%;
+            @include transY(0);
+            // top: 0;
+
+            @media (max-width: $med-desktop) {
+                width: 16%;
+            }
+        }
+
+        @media (max-width: $max-tablet) {
+            display: none;
+        }
+    }
+
+    .mobile-home {
+        display: none;
+
+        @media (max-width: $max-tablet) {
+            display: inline;
+            border: 0;
         }
     }
 }

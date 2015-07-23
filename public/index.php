@@ -13,6 +13,7 @@ $env->addGlobal('year', date('Y'));
 $container = $app->getContainer();
 $container->register($view);
 
+// Routes
 $app->get('/', function ($request, $response, $args) {
     return $this->view->render(
         $response,
