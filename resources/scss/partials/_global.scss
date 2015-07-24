@@ -6,7 +6,7 @@ html, body {
 body {
     @include body-font(400);
     color: $black;
-    font-size: 1.125em;
+    font-size: 18px;
     margin: 0 auto;
     padding: 0;
 }
@@ -26,15 +26,19 @@ header {
 }
 
 section {
-    margin: 3em auto;
+    margin: 2em auto;
     width: 60%;
 
-    @media (max-width: 768px) {
+    @media (max-width: $max-tablet) {
         width: 80%;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: $max-mobile) {
         width: 90%;
+    }
+
+    @media (min-width: $max-tablet) {
+        margin: 3em auto;
     }
 }
 
